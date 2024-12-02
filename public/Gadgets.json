@@ -1,0 +1,135 @@
+[
+    {
+      "product_id": "001",
+      "product_title": "Samsung Galaxy S23 Ultra",
+      "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/Galaxy-S23-Ultra-Green-3380.jpg",
+      "category": "Mobile",
+      "price": 1199,
+      "description": "Flagship smartphone with advanced camera and high performance.",
+      "specification": ["6.8-inch QHD+ AMOLED display", "200MP camera", "5000mAh battery", "Snapdragon 8 Gen 2"],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "002",
+      "product_title": "Razer Blade Stealth 13",
+      "product_image": "https://mcsolution.com.bd/wp-content/uploads/2021/03/Razer-Blade-Stealth-13-Ultrabook-Intel-Core-i7.jpg",
+      "category": "Laptop",
+      "price": 1599,
+      "description": "Ultra-portable laptop with Intel i7 and NVIDIA GTX 1650.",
+      "specification": ["13.3-inch FHD display", "16GB RAM", "512GB SSD", "Intel Core i7-1165G7", "NVIDIA GTX 1650"],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "003",
+      "product_title": "Samsung Galaxy A54",
+      "product_image": "https://images.samsung.com/is/image/samsung/p6pim/bd/sm-a546elvcbkd/gallery/bd-galaxy-a54-5g-sm-a546-sm-a546elvcbkd-536338557?$1300_1038_PNG$",
+      "category": "Mobile",
+      "price": 449,
+      "description": "Mid-range smartphone with solid performance and good battery life.",
+      "specification": ["6.4-inch FHD+ AMOLED display", "50MP camera", "5000mAh battery", "Exynos 1380"],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "004",
+      "product_title": "Apple MacBook Air M2",
+      "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba13-midnight-select-202402?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1708367688034",
+      "category": "Laptop",
+      "price": 999,
+      "description": "Ultra-slim laptop with Apple's M2 chip for excellent performance.",
+      "specification": ["13.6-inch Liquid Retina display", "8GB RAM", "256GB SSD", "Apple M2 chip"],
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": "005",
+      "product_title": "Samsung Galaxy Z Fold 5",
+      "product_image": "https://images.samsung.com/bd/smartphones/galaxy-z-fold5/buy/nonshop_icyBlue.jpg",
+      "category": "Mobile",
+      "price": 1799,
+      "description": "Foldable smartphone with a large inner screen for productivity.",
+      "specification": ["7.6-inch Dynamic AMOLED display", "50MP camera", "4400mAh battery", "Snapdragon 8 Gen 2"],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "006",
+      "product_title": "Apple iPhone 14",
+      "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-14-Blue-7810.jpg",
+      "category": "Mobile",
+      "price": 799,
+      "description": "Reliable iPhone with excellent camera and smooth performance.",
+      "specification": ["6.1-inch Super Retina XDR display", "12MP camera", "3279mAh battery", "A15 Bionic chip"],
+      "availability": false,
+      "rating": 4.6
+    },
+    {
+      "product_id": "007",
+      "product_title": "Apple iPhone SE (2023)",
+      "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/5020-41819.jpg",
+      "category": "Mobile",
+      "price": 429,
+      "description": "Compact iPhone with powerful performance and classic design.",
+      "specification": ["4.7-inch Retina HD display", "12MP camera", "2018mAh battery", "A15 Bionic chip"],
+      "availability": true,
+      "rating": 4.4
+    },
+    {
+        "product_id": "008",
+        "product_title": "Apple AirPods Pro 2",
+        "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-2-hero-select-202409_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=1725492499003",
+        "category": "Airbuds",
+        "price": 249,
+        "description": "Premium earbuds with active noise cancellation and spatial audio.",
+        "specification": ["H2 chip", "ANC", "MagSafe charging", "6 hours listening time"],
+        "availability": true,
+        "rating": 4.8
+      },
+      {
+        "product_id": "009",
+     "product_title": "Apple iPhone 15 Pro Max",
+      "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(1)-6945.jpg",
+      "category": "Mobile",
+      "price": 1299,
+      "description": "Premium smartphone with titanium build and advanced A17 Bionic chip.",
+      "specification": ["6.7-inch Super Retina XDR display", "48MP camera", "4352mAh battery", "A17 Bionic chip"],
+      "availability": true,
+      "rating": 4.9
+      },
+    {
+      "product_id": "010",
+     "product_title": "Asus ROG Strix Scar 15",
+        "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/G834JZ-9605.jpg",
+        "category": "Laptop",
+        "price": 2299,
+        "description": "Premium gaming laptop with Intel i9 and NVIDIA RTX 3080.",
+        "specification": ["15.6-inch FHD display", "32GB RAM", "1TB SSD", "Intel Core i9-12900H", "NVIDIA RTX 3080"],
+        "availability": true,
+        "rating": 4.9
+    },
+    {
+      "product_id": "011",
+        "product_title": "Apple Watch Series 9",
+      "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/Apple-Watch-Series-9-(3)-6716.jpg",
+      "category": "Smart Watches",
+      "price": 399,
+      "description": "Feature-rich smartwatch with new S9 chip and advanced health tracking.",
+      "specification": ["Always-On Retina display", "Blood Oxygen sensor", "Crash detection", "18-hour battery life"],
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": "012",
+       "product_title": "Samsung Galaxy Buds 2 Pro",
+      "product_image": "https://image-us.samsung.com/us/mobile-audio/galaxy-buds2-pro/gallery/white/Q4B4B2C-86-SM-R510_001_Front_White_RGB-GalleryImage-1600x1200.jpg?$product-details-jpg$",
+      "category": "Airbuds",
+      "price": 229,
+      "description": "Comfortable earbuds with rich sound and advanced ANC.",
+      "specification": ["24-bit Hi-Fi audio", "ANC", "Wireless charging", "5 hours listening time"],
+      "availability": true,
+      "rating": 4.7
+    }
+  ]
+  
