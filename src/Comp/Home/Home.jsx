@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Gadget from "../Gadget/Gadget";
+import NoProduct from "../NoProduct/NoProduct";
 
 const Home = () => {
   const [gadgets, setGadgets] = useState([]);
@@ -24,13 +25,13 @@ const Home = () => {
       <h1 className="text-center text-4xl font-bold mb-10">
         Explore Cutting-Edge Gadgets
       </h1>
-      <div className="flex gap-5 max-w-screen-xl mx-auto">
-        <div>
-          <div className="bg-white p-6 rounded-2xl space-y-5">
+      <div className="lg:flex md:flex  gap-5 max-w-screen-xl mx-auto">
+        <div >
+          <div className="bg-white p-6 rounded-2xl space-y-5 ">
             <button
               className={`block rounded-full w-40 text-sm py-3 pl-4 text-left ${
                 activeButton === "All products"
-                  ? "bg-purple-500 text-white"
+                  ? "bg-[#9538E2] text-white font-bold"
                   : "bg-gray-200"
               }`}
               onClick={() => handleBtn("All products")}
@@ -40,7 +41,7 @@ const Home = () => {
             <button
               className={`block rounded-full w-40 text-sm py-3 pl-4 text-left ${
                 activeButton === "Mobile"
-                  ? "bg-purple-500 text-white"
+                  ? "bg-[#9538E2] text-white font-bold"
                   : "bg-gray-200"
               }`}
               onClick={() => handleBtn("Mobile")}
@@ -50,7 +51,7 @@ const Home = () => {
             <button
               className={`block rounded-full w-40 text-sm py-3 pl-4 text-left ${
                 activeButton === "Laptop"
-                  ? "bg-purple-500 text-white"
+                  ? "bg-[#9538E2] text-white font-bold"
                   : "bg-gray-200"
               }`}
               onClick={() => handleBtn("Laptop")}
@@ -60,7 +61,7 @@ const Home = () => {
             <button
               className={`block rounded-full w-40 text-sm py-3 pl-4 text-left ${
                 activeButton === "Airbuds"
-                  ? "bg-purple-500 text-white"
+                  ? "bg-[#9538E2] text-white font-bold"
                   : "bg-gray-200"
               }`}
               onClick={() => handleBtn("Airbuds")}
@@ -70,7 +71,7 @@ const Home = () => {
             <button
               className={`block rounded-full w-40 text-sm py-3 pl-4 text-left ${
                 activeButton === "Smart Watches"
-                  ? "bg-purple-500 text-white"
+                  ? "bg-[#9538E2] text-white font-bold"
                   : "bg-gray-200"
               }`}
               onClick={() => handleBtn("Smart Watches")}
@@ -80,7 +81,7 @@ const Home = () => {
             <button
               className={`block rounded-full w-40 text-sm py-3 pl-4 text-left ${
                 activeButton === "Accessories"
-                  ? "bg-purple-500 text-white"
+                  ? "bg-[#9538E2] text-white font-bold"
                   : "bg-gray-200"
               }`}
               onClick={() => handleBtn("Accessories")}
@@ -89,14 +90,14 @@ const Home = () => {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="w-full px-2">
             
-          {activeButton === "All products" ?
-          (gadgets.map((gadget, index) => <Gadget key={index} gadget={gadget}></Gadget>)) :
+          {activeButton === "All products" ? 
+          (<div  className="lg:grid grid-cols-3 gap-5">{gadgets.map((gadget, index) => <Gadget key={index} gadget={gadget}></Gadget>)}</div>) :
           (
             newData.length !== 0 ? 
-            (newData.map((gadget, index) => (<Gadget key={index} gadget={gadget}></Gadget>))) : 
-            (<p>No products found</p>)
+            (<div  className="lg:grid grid-cols-3 gap-5">{newData.map((gadget, index) => (<Gadget key={index} gadget={gadget}></Gadget>))}</div>) : 
+            (<NoProduct ></NoProduct>)
           )}
 
         </div>

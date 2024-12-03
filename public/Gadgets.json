@@ -1,6 +1,6 @@
 [
     {
-      "product_id": "001",
+      "product_id": "1",
       "product_title": "Samsung Galaxy S23 Ultra",
       "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/Galaxy-S23-Ultra-Green-3380.jpg",
       "category": "Mobile",
@@ -11,7 +11,7 @@
       "rating": 4.8
     },
     {
-      "product_id": "002",
+      "product_id": "2",
       "product_title": "Razer Blade Stealth 13",
       "product_image": "https://mcsolution.com.bd/wp-content/uploads/2021/03/Razer-Blade-Stealth-13-Ultrabook-Intel-Core-i7.jpg",
       "category": "Laptop",
@@ -22,7 +22,7 @@
       "rating": 4.7
     },
     {
-      "product_id": "003",
+      "product_id": "3",
       "product_title": "Samsung Galaxy A54",
       "product_image": "https://images.samsung.com/is/image/samsung/p6pim/bd/sm-a546elvcbkd/gallery/bd-galaxy-a54-5g-sm-a546-sm-a546elvcbkd-536338557?$1300_1038_PNG$",
       "category": "Mobile",
@@ -33,7 +33,7 @@
       "rating": 4.5
     },
     {
-      "product_id": "004",
+      "product_id": "4",
       "product_title": "Apple MacBook Air M2",
       "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba13-midnight-select-202402?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1708367688034",
       "category": "Laptop",
@@ -44,7 +44,7 @@
       "rating": 4.9
     },
     {
-      "product_id": "005",
+      "product_id": "5",
       "product_title": "Samsung Galaxy Z Fold 5",
       "product_image": "https://images.samsung.com/bd/smartphones/galaxy-z-fold5/buy/nonshop_icyBlue.jpg",
       "category": "Mobile",
@@ -55,7 +55,7 @@
       "rating": 4.7
     },
     {
-      "product_id": "006",
+      "product_id": "6",
       "product_title": "Apple iPhone 14",
       "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-14-Blue-7810.jpg",
       "category": "Mobile",
@@ -66,7 +66,7 @@
       "rating": 4.6
     },
     {
-      "product_id": "007",
+      "product_id": "7",
       "product_title": "Apple iPhone SE (2023)",
       "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/5020-41819.jpg",
       "category": "Mobile",
@@ -77,7 +77,7 @@
       "rating": 4.4
     },
     {
-        "product_id": "008",
+        "product_id": "8",
         "product_title": "Apple AirPods Pro 2",
         "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-2-hero-select-202409_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=1725492499003",
         "category": "Airbuds",
@@ -88,7 +88,7 @@
         "rating": 4.8
       },
       {
-        "product_id": "009",
+        "product_id": "9",
      "product_title": "Apple iPhone 15 Pro Max",
       "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(1)-6945.jpg",
       "category": "Mobile",
@@ -99,7 +99,7 @@
       "rating": 4.9
       },
     {
-      "product_id": "010",
+      "product_id": "10",
      "product_title": "Asus ROG Strix Scar 15",
         "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/G834JZ-9605.jpg",
         "category": "Laptop",
@@ -110,7 +110,7 @@
         "rating": 4.9
     },
     {
-      "product_id": "011",
+      "product_id": "11",
         "product_title": "Apple Watch Series 9",
       "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/Apple-Watch-Series-9-(3)-6716.jpg",
       "category": "Smart Watches",
@@ -121,7 +121,7 @@
       "rating": 4.9
     },
     {
-      "product_id": "012",
+      "product_id": "12",
        "product_title": "Samsung Galaxy Buds 2 Pro",
       "product_image": "https://image-us.samsung.com/us/mobile-audio/galaxy-buds2-pro/gallery/white/Q4B4B2C-86-SM-R510_001_Front_White_RGB-GalleryImage-1600x1200.jpg?$product-details-jpg$",
       "category": "Airbuds",
