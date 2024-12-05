@@ -7,7 +7,7 @@ const Gadget = ({ gadget }) => {
   return (
     <Link to={`/gadget/${product_id}`}>
       <div>
-        <div className="card card-compact bg-base-100  shadow-xl">
+        <div className="card card-compact bg-base-100  shadow-xl lg:my-0 md:my-0 my-5">
           <div>
             <img
               className="h-80 w-full  object-contain"
