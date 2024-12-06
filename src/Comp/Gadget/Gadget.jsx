@@ -7,7 +7,7 @@ const Gadget = ({ gadget }) => {
   return (
     <Link to={`/gadget/${product_id}`}>
       <div>
-        <div className="card card-compact bg-base-100  shadow-xl lg:my-0 md:my-0 my-5">
+        <div className="card card-compact bg-base-100 p-2 rounded-3xl shadow-xl lg:my-0 md:my-0 my-5">
           <div>
             <img
               className="h-80 w-full  object-contain"
@@ -15,11 +15,11 @@ const Gadget = ({ gadget }) => {
               alt="Shoes"
             />
           </div>
-          <div className="card-body">
+          <div className="card-body ">
             <h2 className="card-title">{product_title}</h2>
-            <p>Price: ${price}</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+            <p className="font-bold opacity-50 text-base">Price: ${price}</p>
+            <div className="card-actions justify-start">
+              <button className="btn mt-4 rounded-full text-purple-600 bg-white border-purple-600 hover:border-purple-600  ">View Details</button>
             </div>
           </div>
         </div>

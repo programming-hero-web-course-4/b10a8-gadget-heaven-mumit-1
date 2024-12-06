@@ -29,7 +29,7 @@ const SingleDetail = () => {
   return (
     <div className="">
       <div className="hero pb-5 bg-base-200 min-h-screen">
-        <div className="hero-content flex-col lg:flex-row gap-8 bg-white lg:p-8 md:p-6 rounded-xl">
+        <div className="hero-content flex-col lg:flex-row gap-8 bg-white lg:p-8 md:p-6 rounded-xl drop-shadow-xl">
           <div className="lg:w-96"><img src={product_image} className="w-full object-contain rounded-lg " /></div>
           <div>
             <h1 className="text-3xl font-bold">{product_title}</h1>
@@ -73,7 +73,7 @@ const SingleDetail = () => {
                 Add to Card <IoCartOutline />
               </button>
 
-              <div className="btn border p-3 px-3.5 rounded-full bg-white border-gray-300">
+              <div className="btn border p-3 px-3.5 rounded-full bg-white border-gray-300 hover:bg-white ">
                 <div className="w-5 ">
                   <Heart isActive={active}  />
                 </div>

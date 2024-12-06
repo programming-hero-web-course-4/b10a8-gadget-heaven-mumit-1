@@ -12,7 +12,7 @@ const Home = () => {
       .then((data) => setGadgets(data));
   }, []);
 
-  const [activeButton, setActiveButton] = useState("All products");
+  const [activeButton, setActiveButton] = useState("All Products");
 
   const [newData,setNewData] = useState([])
   const handleBtn = (data) => {
@@ -35,7 +35,7 @@ const Home = () => {
         <div >
           <div className="bg-white p-6 rounded-2xl space-y-5 lg:block flex flex-wrap gap-x-4 justify-center">
           <button
-              className={`block btn rounded-full w-40 text-sm py-3 pl-4 text-left relative top-[20px] lg:top-0 md:top-0 ${
+              className={`block btn hover:bg-purple-700 hover:text-white rounded-full w-40 text-sm py-3 pl-4 text-left relative top-[20px] lg:top-0 md:top-0 ${
                 activeButton === "All Products"
                   ? "bg-[#9538E2] text-white font-bold"
                   : "bg-gray-200"
@@ -47,7 +47,7 @@ const Home = () => {
             {
             arrayNeed.map((category ,idx)=>  
                 <button key={idx}
-            className={`block btn rounded-full w-40 text-sm py-3 pl-4 text-left ${
+            className={`block btn hover:bg-purple-700 hover:text-white rounded-full w-40 text-sm py-3 pl-4 text-left ${
               activeButton === category
                 ? "bg-[#9538E2] text-white font-bold"
                 : "bg-gray-200"
@@ -61,7 +61,7 @@ const Home = () => {
             
             
             <button
-              className={`block btn rounded-full w-40 text-sm py-3 pl-4 text-left ${
+              className={`block btn hover:bg-purple-700 hover:text-white rounded-full w-40 text-sm py-3 pl-4 text-left ${
                 activeButton === "Accessories"
                   ? "bg-[#9538E2] text-white font-bold"
                   : "bg-gray-200"
