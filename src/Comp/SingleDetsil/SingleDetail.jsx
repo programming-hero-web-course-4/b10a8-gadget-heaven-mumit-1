@@ -8,6 +8,14 @@ import Heart from "react-heart";
 const SingleDetail = () => {
   const { product_id } = useParams();
   const data = useLoaderData();
+  
+
+
+
+
+
+
+
   const newData = data.find((gadget) => gadget.product_id === product_id);
   const {
     product_title,
@@ -28,7 +36,7 @@ const SingleDetail = () => {
   const [active, setActive] = useState(false);
   return (
     <div className="">
-      <div className="hero pb-5 bg-base-200 min-h-screen">
+      <div className="hero py-20 px-2  bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row gap-8 bg-white lg:p-8 md:p-6 rounded-xl drop-shadow-xl">
           <div className="lg:w-96"><img src={product_image} className="w-full object-contain rounded-lg " /></div>
           <div>
@@ -68,14 +76,14 @@ const SingleDetail = () => {
                 {rating}
               </button>
             </div>
-            <div className="flex gap-3 items-center" onClick={() => setActive(!active)}>
+            <div className="flex gap-3 items-center lg:py-1 md:py-3 pb-3 pt-1.5" >
               <button className="btn bg-[#9538E2] hover:bg-purple-700 text-white rounded-full">
                 Add to Card <IoCartOutline />
               </button>
 
               <div className="btn border p-3 px-3.5 rounded-full bg-white border-gray-300 hover:bg-white ">
                 <div className="w-5 ">
-                  <Heart isActive={active}  />
+                  <Heart isActive={active}  onClick={() => setActive(!active)}/>
                 </div>
               </div>
             </div>

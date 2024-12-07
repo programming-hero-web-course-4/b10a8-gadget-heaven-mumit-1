@@ -9,6 +9,7 @@ import Root from './Comp/Root/Root';
 import Error from './Comp/Error/Error';
 import Home from './Comp/Home/Home';
 import SingleDetail from './Comp/SingleDetsil/SingleDetail';
+import Dashboard from './Comp/Dashboard/Dashboard';
 
 
 const router = createBrowserRouter([
@@ -24,8 +25,12 @@ const router = createBrowserRouter([
     {
       path:"/gadget/:product_id",
       element:<SingleDetail></SingleDetail>,
-      loader:()=>fetch('/public/Gadgets.json'),
-    }
+      loader:()=>fetch('/Gadgets.json'),
+    },
+    {
+      path: '/dashboard',
+      element: <Dashboard></Dashboard>
+    },
   ]
   },
 ]);

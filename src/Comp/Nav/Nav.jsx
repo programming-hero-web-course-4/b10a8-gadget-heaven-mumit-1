@@ -14,7 +14,7 @@ const Nav = () => {
 
       </li>
       <li>
-        <a>Dashboard</a>
+        <NavLink to="/dashboard">Dashboard</NavLink>
       </li>
       </>
     
@@ -22,7 +22,7 @@ const Nav = () => {
     <div className="bg-gray-100 lg:p-6 md:p-4 p-3 ">
       <div className="relative">
           <div className="bg-[#9538E2] rounded-xl lg:mb-72 md:mb-64 mb-20">
-              <div className=" navbar max-w-screen-xl mx-auto px-5 pt-4">
+              <div className=" navbar max-w-screen-xl mx-auto lg:px-5 lg:pb-0 pb-5 pt-4">
                 <div className="navbar-start w-96 lg:w-1/2 md:w-1/2">
                   <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
