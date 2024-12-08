@@ -2,8 +2,9 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { Rating, Star } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { IoCartOutline } from "react-icons/io5";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Heart from "react-heart";
+import { cartListNeed } from "../Root/Root";
 // import Heart from "react-heart";
 const SingleDetail = () => {
   const { product_id } = useParams();
@@ -34,6 +35,8 @@ const SingleDetail = () => {
   };
  
   const [active, setActive] = useState(false);
+
+  const [cartList,setcartList] = useContext(cartListNeed);
   return (
     <div className="">
       <div className="hero py-20 px-2  bg-base-200 min-h-screen">
@@ -77,11 +80,16 @@ const SingleDetail = () => {
               </button>
             </div>
             <div className="flex gap-3 items-center lg:py-1 md:py-3 pb-3 pt-1.5" >
-              <button className="btn bg-[#9538E2] hover:bg-purple-700 text-white rounded-full">
+              <button
+               onClick={()=>
+                !cartList.find(cart=>cart.product_id===newData.product_id) ? setcartList([...cartList,newData]) : null
+                
+              }
+                className="btn bg-[#9538E2] hover:bg-purple-700 text-white rounded-full">
                 Add to Card <IoCartOutline />
               </button>
 
-              <div className="btn border p-3 px-3.5 rounded-full bg-white border-gray-300 hover:bg-white ">
+              <div  className="btn border p-3 px-3.5 rounded-full bg-white border-gray-300 hover:bg-white ">
                 <div className="w-5 ">
                   <Heart isActive={active}  onClick={() => setActive(!active)}/>
                 </div>
