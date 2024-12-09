@@ -1,19 +1,18 @@
-import React, { useContext } from "react";
-import { cartListNeed } from "../Root/Root";
-import DashboardMore from "./DashboardMore";
+
+import { NavLink, Outlet } from "react-router-dom";
+
 
 const Dashboard = () => {
-    const [cartlist] = useContext(cartListNeed);
+
 
   return (
-    <div>
-     
-        <div>
-            {
-                cartlist.map((cart,idx)=><DashboardMore key={idx} cart={cart}></DashboardMore>)
-            }
-        </div>
-
+    <div className="max-w-screen-xl mx-auto px-2">
+             
+         
+                  
+                  
+                  <Outlet></Outlet>
+       
     </div>
 
 

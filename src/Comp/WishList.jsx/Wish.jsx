@@ -1,7 +1,6 @@
 
 
-const DashboardMore = ({cart}) => {
-   
+const Wish = ({wish}) => {
     const {
         product_title,
         product_image,
@@ -10,10 +9,10 @@ const DashboardMore = ({cart}) => {
         description,
         specification,
         rating,
-      } = cart;
+      } = wish;
     return (
         <div>
-             <div className="card bg-base-100 w-96 shadow-xl">
+                  <div className="card bg-base-100 w-96 shadow-xl">
         <figure>
           <img
             src={product_image}
@@ -32,4 +31,4 @@ const DashboardMore = ({cart}) => {
     );
 };
 
-export default DashboardMore;
+export default Wish;
