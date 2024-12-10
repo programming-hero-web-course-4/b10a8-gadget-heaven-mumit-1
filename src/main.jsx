@@ -9,6 +9,7 @@ import SingleDetail from "./Comp/SingleDetsil/SingleDetail";
 import Dashboard from "./Comp/Dashboard/Dashboard";
 import WishList from "./Comp/WishList.jsx/WishList";
 import CartParent from "./Comp/Cart/CartParent";
+import Stats from "./Comp/Stats/Stats";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
       {
         path: "/gadget/:product_id",
         element: <SingleDetail></SingleDetail>,
+        loader: () => fetch("/Gadgets.json"),
+      },
+      {
+        path: "/stats",
+        element: <Stats></Stats>,
         loader: () => fetch("/Gadgets.json"),
       },
       {

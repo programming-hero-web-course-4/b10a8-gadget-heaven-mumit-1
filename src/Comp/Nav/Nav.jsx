@@ -6,16 +6,39 @@ const Nav = () => {
   const location = useLocation();
   // console.log(location);
   const {pathname} = useLocation();
-  console.log(pathname);
+
     const link =<>
         <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/" className={({isActive})=>`btn hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-black ${
+        isActive ? "underline underline-offset-4    " : " "
+      }`}>Home</NavLink>
       </li>
       <li>
-      <p >Stat</p>
+      <NavLink to="/stats" className={({isActive})=>`btn hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-black ${
+        isActive ? "underline underline-offset-4  " : " "
+      }`}>Stats</NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard"><Link to="/dashboard/cart">Dashboard</Link></NavLink>
+        <NavLink to="/dashboard/cart" className={({isActive})=>`btn hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-black ${
+        isActive ? "underline underline-offset-4  " : " "
+      }`}>Dashboard</NavLink>
+      </li>
+      </>
+    const linkCopy =<>
+        <li>
+        <NavLink to="/" className={({isActive})=>` hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-black ${
+        isActive ? "underline underline-offset-4    " : " "
+      }`}>Home</NavLink>
+      </li>
+      <li>
+      <NavLink to="/stats" className={({isActive})=>` hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-black ${
+        isActive ? "underline underline-offset-4  " : " "
+      }`}>Stats</NavLink>
+      </li>
+      <li>
+        <NavLink to="/dashboard/cart" className={({isActive})=>` hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-black ${
+        isActive ? "underline underline-offset-4  " : " "
+      }`}>Dashboard</NavLink>
       </li>
       </>
       
@@ -60,21 +83,22 @@ const Nav = () => {
                     </div>
                     <ul
                       tabIndex={0}
-                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow "
                     >
-                      {link}
+                      {linkCopy}
                     </ul>
                   </div>
                   <a className=" text-xl font-bold ">Gadget Heaven</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                  <ul className="menu menu-horizontal px-1">
+                  <ul className="menu menu-horizontal px-1 gap-5">
                    {link}
                   </ul>
                 </div>
-                <div className="navbar-end gap-4">
-                  <button className=" block rounded-full border border-gray-300 p-2 bg-white"> <IoCartOutline className="text-2xl" /></button>
-                  <button className=" block rounded-full border border-gray-300 p-2 bg-white"> <CiHeart className="text-2xl" /> </button>
+                <div className="navbar-end gap-4 mr-2.5">
+                  <Link to="/dashboard/cart"><button className=" block hover:drop-shadow-xl rounded-full border border-gray-300 p-2 bg-white"> <IoCartOutline className="text-2xl" /></button></Link>
+                  <Link to="/dashboard/wishlist"><button className=" block hover:drop-shadow-xl rounded-full border border-gray-300 p-2 bg-white"> <CiHeart className="text-2xl" /> </button></Link>
+                  
                 </div>
               </div>
     </>
@@ -98,7 +122,7 @@ const Nav = () => {
     </div>
     </>
     const dashboardNav = <>
-    {mainNav}
+    <div className="lg:pb-2.5">{mainNav}</div>
     <div className="text-center bg-[#9538E2] py-8">
       <div className="">
         <h1 className="text-3xl font-bold">Dashboard</h1>
@@ -111,10 +135,19 @@ const Nav = () => {
 
     </>
     const singleDetailNav = <>
-    {mainNav}
+    <div className="lg:pb-2.5">{mainNav}</div>
     <div className="text-center bg-[#9538E2] pb-52">
       <div className="py-8">
         <h1 className="text-3xl font-bold">Product details</h1>
+        <p className="w-4/5 mx-auto mt-4">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
+            </div>
+      </div>
+    </>
+    const statsNav = <>
+    <div className="lg:pb-2.5">{mainNav}</div>
+    <div className="text-center bg-[#9538E2] ">
+      <div className="py-8">
+        <h1 className="text-3xl font-bold">Statistics</h1>
         <p className="w-4/5 mx-auto mt-4">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
             </div>
       </div>
@@ -125,6 +158,8 @@ const Nav = () => {
     { pathname === "/" && homeNav }
     { pathname.startsWith("/dashboard") && dashboardNav}
     { pathname.startsWith("/gadget") && singleDetailNav}
+    { pathname.startsWith("/stats") && statsNav}
+
     </>
   );
 };

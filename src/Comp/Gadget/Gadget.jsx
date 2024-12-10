@@ -19,7 +19,7 @@ const Gadget = ({ gadget }) => {
             <h2 className="card-title">{product_title}</h2>
             <p className="font-bold opacity-50 text-base">Price: ${price}</p>
             <div className="card-actions justify-start">
-              <button className="btn mt-4 rounded-full text-purple-600 bg-white border-purple-600 hover:border-purple-600  ">View Details</button>
+              <button className="btn mt-4 rounded-full text-purple-600 bg-white border-purple-600 hover:border-purple-600  hover:text-white hover:bg-purple-600">View Details</button>
             </div>
           </div>
         </div>

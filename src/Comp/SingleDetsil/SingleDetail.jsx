@@ -33,8 +33,15 @@ const SingleDetail = () => {
     activeFillColor: "#ffb700",
     inactiveFillColor: "#fbf1a9",
   };
- 
+  const [disable,setDisable] = useState(false)
   const [active, setActive] = useState(false);
+  const handleHeart =()=>{
+    if(!wishList.find(cart=>cart.product_id===newData.product_id)){
+      setWishList([...wishList,newData])
+      setDisable(true);
+      setActive(!active);
+    }
+  }
 
   const [cartList,setcartList] = useContext(cartListNeed);
   const [wishList,setWishList] = useContext(wishlistNeed);
@@ -83,19 +90,17 @@ const SingleDetail = () => {
             <div className="flex gap-3 items-center lg:py-1 md:py-3 pb-3 pt-1.5" >
               <button
                onClick={()=>
-                !cartList.find(cart=>cart.product_id===newData.product_id) ? setcartList([...cartList,newData]) : null
+                !cartList.find(cart=>cart.product_id===newData.product_id && cart.availability===true) ? setcartList([...cartList,newData]) : null
               }
                 className="btn bg-[#9538E2] hover:bg-purple-700 text-white rounded-full">
                 Add to Card <IoCartOutline />
               </button>
 
-              <div onClick={()=>
-                !wishList.find(cart=>cart.product_id===newData.product_id) ? setWishList([...wishList,newData]) : null
-              } className="btn border p-3 px-3.5 rounded-full bg-white border-gray-300 hover:bg-white ">
-                <div className="w-5 ">
-                  <Heart isActive={active}  onClick={() => setActive(!active)}/>
+              
+                <div  >
+                  <Heart className="block w-[52px] p-3 btn border  rounded-full   " isActive={active} disabled={disable} onClick={() => handleHeart()}/>
                 </div>
-              </div>
+              
             </div>
           </div>
         </div>
