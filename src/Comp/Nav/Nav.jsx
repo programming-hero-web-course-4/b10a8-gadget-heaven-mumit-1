@@ -24,7 +24,7 @@ const Nav = () => {
     <NavLink   className={({ isActive }) =>
       `btn rounded-full p-4 font-bold w-32 flex justify-center border-2 hover:text-[#9538E2] hover:bg-white ${
         isActive ? "bg-white text-[#9538E2] border-white" : "bg-[#9538E2] text-white border-white"
-      }`}  to="/dashboard/cart">Dashboard</NavLink>
+      }`}  to="/dashboard/cart">Cart</NavLink>
   </li>
     {/* <li>
     <NavLink className="rounded-full p-4 font-bold w-32 flex justify-center border-2 border-black" to="/dashboard/cart">Dashboard</NavLink>

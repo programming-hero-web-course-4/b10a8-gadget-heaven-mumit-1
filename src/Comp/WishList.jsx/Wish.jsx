@@ -1,4 +1,6 @@
-
+import { useContext } from "react";
+import { cartListNeed } from "../Root/Root";
+import { IoCartOutline } from "react-icons/io5";
 
 const Wish = ({wish}) => {
     const {
@@ -10,23 +12,24 @@ const Wish = ({wish}) => {
         specification,
         rating,
       } = wish;
+      const [cartList,setcartList] = useContext(cartListNeed);
     return (
-        <div>
-                  <div className="card bg-base-100 w-96 shadow-xl">
-        <figure>
-          <img
-            src={product_image}
-            alt="Shoes"
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">{product_title}</h2>
-          <p>{price}</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">${price}</button>
-          </div>
-        </div>
-      </div>
+        <div className="">
+                 <div className="flex justify-center items-center gap-4">
+                  <div className="w-40 border-2"><img className="object-contain w-full" src={product_image} alt="" /></div>
+                  <div className="space-y-2">
+                    <h1 className="text-lg font-bold">{product_title}</h1>
+                    <p><span className="font-bold">Description:</span> {description}</p>
+                    <p className="font-bold">Price ${price}</p>
+                    <button
+               onClick={()=>
+                !cartList.find(cart=>cart.product_id===wish.product_id) ? setcartList([...cartList,wish]) : null
+              }
+                className="btn bg-[#9538E2] hover:bg-purple-700 text-white rounded-full">
+                Add to Card <IoCartOutline />
+              </button>
+                  </div>
+                 </div>
         </div>
     );
 };
