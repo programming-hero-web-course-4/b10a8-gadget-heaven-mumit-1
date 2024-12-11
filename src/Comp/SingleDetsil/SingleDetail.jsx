@@ -5,17 +5,11 @@ import { IoCartOutline } from "react-icons/io5";
 import React, { useContext, useState } from "react";
 import Heart from "react-heart";
 import { cartListNeed, wishlistNeed } from "../Root/Root";
+import { ToastContainer, toast } from "react-toastify";
 // import Heart from "react-heart";
 const SingleDetail = () => {
   const { product_id } = useParams();
   const data = useLoaderData();
-  
-
-
-
-
-
-
 
   const newData = data.find((gadget) => gadget.product_id === product_id);
   const {
@@ -33,23 +27,34 @@ const SingleDetail = () => {
     activeFillColor: "#ffb700",
     inactiveFillColor: "#fbf1a9",
   };
-  const [disable,setDisable] = useState(false)
+  const [disable, setDisable] = useState(false);
   const [active, setActive] = useState(false);
-  const handleHeart =()=>{
-    if(!wishList.find(cart=>cart.product_id===newData.product_id)){
-      setWishList([...wishList,newData])
+  const handleHeart = () => {
+    if (!wishList.find((cart) => cart.product_id === newData.product_id)) {
+      setWishList([...wishList, newData]);
+      toast.success("Added to Wishlist.");
       setDisable(true);
       setActive(!active);
     }
-  }
-
-  const [cartList,setcartList] = useContext(cartListNeed);
-  const [wishList,setWishList] = useContext(wishlistNeed);
+  };
+  const [cartList, setcartList] = useContext(cartListNeed);
+  const [wishList, setWishList] = useContext(wishlistNeed);
+  const handleAddtoCart = () => {
+    !cartList.find((cart) => cart.product_id === newData.product_id) && newData.availability
+      ? (setcartList([...cartList, newData]), toast.success("Added to Cart.")) 
+      : newData.availability ?  toast.error("It is in the cart") :  toast.error("The Gadget is not availabale");
+   ;
+  };
   return (
     <div className="relative lg:py-56 md:py-72 py-[420px]  bg-base-200">
       <div className="hero pt-20 px-2 absolute lg:-top-[335px] md:-top-[325px] -top-[300px] min-h-screen">
         <div className="hero-content flex-col lg:flex-row gap-8 bg-white lg:p-8 md:p-6 rounded-2xl drop-shadow-xl">
-          <div className="lg:w-96"><img src={product_image} className="w-full object-contain rounded-lg " /></div>
+          <div className="lg:w-96">
+            <img
+              src={product_image}
+              className="w-full object-contain rounded-lg "
+            />
+          </div>
           <div>
             <h1 className="text-3xl font-bold">{product_title}</h1>
             <p className="py-6 font-semibold text-xl">Price: ${price}</p>
@@ -87,20 +92,22 @@ const SingleDetail = () => {
                 {rating}
               </button>
             </div>
-            <div className="flex gap-3 items-center lg:py-1 md:py-3 pb-3 pt-1.5" >
+            <div className="flex gap-3 items-center lg:py-1 md:py-3 pb-3 pt-1.5">
               <button
-               onClick={()=>
-                !cartList.find(cart=>cart.product_id===newData.product_id && cart.availability===true) ? setcartList([...cartList,newData]) : null
-              }
-                className="btn bg-[#9538E2] hover:bg-purple-700 text-white rounded-full">
+                onClick={() => handleAddtoCart()}
+                className="btn bg-[#9538E2] hover:bg-purple-700 text-white rounded-full"
+              >
                 Add to Card <IoCartOutline />
               </button>
 
-              
-                <div  >
-                  <Heart className="block w-[52px] p-3 btn border  rounded-full   " isActive={active} disabled={disable} onClick={() => handleHeart()}/>
-                </div>
-              
+              <div>
+                <Heart
+                  className="block w-[52px] p-3 btn border  rounded-full   "
+                  isActive={active}
+                  disabled={disable}
+                  onClick={() => handleHeart()}
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { cartListNeed, wishlistNeed } from "../Root/Root";
 import { IoCartOutline } from "react-icons/io5";
 import { RxCross1 } from "react-icons/rx";
+import { ToastContainer, toast } from "react-toastify";
 const Wish = ({ wish }) => {
   const {
     product_id,
@@ -14,10 +15,16 @@ const Wish = ({ wish }) => {
     rating,
   } = wish;
   const [cartList, setcartList] = useContext(cartListNeed);
-  const [wishList,setWishList] = useContext(wishlistNeed);
-  const handleCancel = () =>{
-    setWishList(wishList.filter(wish => wish.product_id !== product_id));
-  }
+  const [wishList, setWishList] = useContext(wishlistNeed);
+  const handleCancel = () => {
+    setWishList(wishList.filter((wish) => wish.product_id !== product_id));
+  };
+  const handleAddtoCart = () => {
+    !cartList.find((cart) =>cart.product_id === wish.product_id)
+     && wish.availability 
+      ? (setcartList([...cartList, wish]), toast.success("Added to Cart."))
+      : !wish.availability ? toast.error("The Gadget is not avaiable.") : toast.error("It is in the cart.");
+  };
   return (
     <div className="mb-5">
       <div className="w-full bg-white p-5 rounded-xl">
@@ -36,24 +43,17 @@ const Wish = ({ wish }) => {
             </p>
             <p className="font-bold">Price ${price}</p>
             <button
-              onClick={() =>
-                !cartList.find(
-                  (cart) =>
-                    cart.product_id === wish.product_id &&
-                    cart.availability === true
-                )
-                  ? setcartList([...cartList, wish])
-                  : null
-              }
+              onClick={() => handleAddtoCart()}
               className="btn bg-[#9538E2] hover:bg-purple-700 text-white rounded-full"
             >
               Add to Card <IoCartOutline />
             </button>
           </div>
-          <button className="btn lg:block md:block absolute lg:top-0 lg:right-0 right-2 bottom-0.5  self-baseline hover:rounded-full lg:h-14 md:h-14 lg:bg-transparent md:bg-transparent bg-base-200 rounded-full border-0 shadow-none -mr-2.5 -mt-2" onClick={()=>handleCancel()}>
-              
-              <RxCross1  className="text-red-700 lg:text-2xl md:text-2xl"/>
-             
+          <button
+            className="btn lg:block md:block absolute lg:top-0 lg:right-0 right-2 bottom-0.5  self-baseline hover:rounded-full lg:h-14 md:h-14 lg:bg-transparent md:bg-transparent bg-base-200 rounded-full border-0 shadow-none -mr-2.5 -mt-2"
+            onClick={() => handleCancel()}
+          >
+            <RxCross1 className="text-red-700 lg:text-2xl md:text-2xl" />
           </button>
         </div>
       </div>

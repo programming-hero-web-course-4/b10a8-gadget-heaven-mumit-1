@@ -11,26 +11,33 @@ const CartParent = () => {
   for (const cart of cartlist) {
     sum += cart.price;
   }
-  const notify = () => toast("Wow so easy!");
+  
+  // const notify = () => toast("Wow so easy!")
+ 
+    
+  
   const handleSort = () => {
     if(cartlist.length>0){
     const sortedCart = [...cartlist].sort((a, b) => b.price - a.price);
     setcartList(sortedCart);
     }
     else{
-    
+      toast.error("No Gadget to sort by price.");
     }
   };
+  const [modalTotal,setModalTotal] = useState(0);
   const handlePurchase = () =>{
     if(cartlist.length>0){
+      setModalTotal(sum);
     document.getElementById("my_modal_5").showModal();
-    setcartList([]);
+    setcartList([])
     }
     else{
-   
+      toast.error("No Gadget to purchase.");
     }
    
   }
+  
   const navigate = useNavigate();
   return (
     <div className=" ">
@@ -60,14 +67,14 @@ const CartParent = () => {
             </button>
             <dialog
               id="my_modal_5"
-              className="modal modal-bottom sm:modal-middle "
+              className="modal modal-bottom sm:modal-middle px-2"
             >
-              <div className="bg-white rounded-3xl pb-5 w-96 mx-auto px-5 mb-4">
+              <div className="bg-white rounded-3xl pb-5 w-96 mx-auto px-5 mb-4 ">
                     <div className="text-center  pb-4">
                       <div className="w-16 mx-auto py-5"><img className="w-full" src={Correct} alt="" /></div>
                       <h1 className="text-xl font-bold pb-5">Payment Successfully</h1>
                       <p>Thanks for purchasing</p>
-                      <p>Total: ${sum}</p>
+                      <p>Total: ${modalTotal}</p>
                     </div>
                     
                     <button onClick={()=>{navigate("/")}} className="btn w-full rounded-full font-bold">Close</button>
