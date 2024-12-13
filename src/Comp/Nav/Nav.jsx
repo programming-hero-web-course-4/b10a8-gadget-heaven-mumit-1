@@ -117,8 +117,66 @@ const Nav = () => {
     <div className="bg-gray-100 lg:p-5 md:p-4 p-3 ">
       <div className="relative">
       <div className="bg-[#9538E2] rounded-xl lg:mb-72 md:mb-64 mb-20">
-         {mainNav}
-         <div className="flex flex-col justify-center items-center gap-6 pt-12 lg:pb-72 md:pb-60 pb-36">
+      <div className=" navbar max-w-screen-xl mx-auto lg:px-5 lg:pb-0 pb-5 pt-4">
+                <div className="navbar-start w-96 lg:w-1/2 md:w-1/2">
+                  <div className="dropdown">
+                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-white">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M4 6h16M4 12h8m-8 6h16"
+                        />
+                      </svg>
+                    </div>
+                    <ul
+                      tabIndex={0}
+                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow "
+                    >
+                      {linkCopy}
+                    </ul>
+                  </div>
+                  <a className=" text-xl font-bold text-white">Gadget Heaven</a>
+                </div>
+                <div className="navbar-center hidden lg:flex">
+                  <ul className="menu menu-horizontal px-1 gap-5">
+                   
+                  <li>
+        <NavLink to="/" className={({isActive})=>`btn hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-white ${
+        isActive ? "underline underline-offset-4    " : " "
+      }`}>Home</NavLink>
+      </li>
+      <li>
+      <NavLink to="/stats" className={({isActive})=>`btn hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-white ${
+        isActive ? "underline underline-offset-4  " : " "
+      }`}>Stats</NavLink>
+      </li>
+      <li>
+        <NavLink to="/dashboard/cart" className={({isActive})=>`btn hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-white ${
+        isActive ? "underline underline-offset-4  " : " "
+      }`}>Dashboard</NavLink>
+      </li>
+      <li>
+        <NavLink to="/point" className={({isActive})=>`btn hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-white ${
+        isActive ? "underline underline-offset-4  " : " "
+      }`}>Point</NavLink>
+      </li>
+                  </ul>
+                </div>
+                <div className="navbar-end gap-4 mr-2.5">
+                  <Link to="/dashboard/cart"><button className=" block hover:drop-shadow-xl rounded-full border border-gray-300 p-2 bg-white"> <IoCartOutline className="text-2xl" /></button></Link>
+                  <Link to="/dashboard/wishlist"><button className=" block hover:drop-shadow-xl rounded-full border border-gray-300 p-2 bg-white"> <CiHeart className="text-2xl" /> </button></Link>
+                  
+                </div>
+              </div>
+         <div className="flex flex-col justify-center items-center gap-6 pt-12 lg:pb-72 md:pb-60 pb-36 text-white">
                 <h1 className="lg:text-6xl md:text-3xl text-4xl font-bold lg:w-10/12 w-11/12  text-center">Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
                 <p className="text-center lg:w-2/3 w-4/5">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
                 <Link to="/dashboard/cart"> <button className="btn block rounded-full px-6">Shop Now</button></Link>
@@ -134,7 +192,7 @@ const Nav = () => {
     </>
     const dashboardNav = <>
     <div className="lg:pb-2.5">{mainNav}</div>
-    <div className="text-center bg-[#9538E2] py-8">
+    <div className="text-center bg-[#9538E2] py-8 text-white">
       <div className="">
         <h1 className="text-3xl font-bold">Dashboard</h1>
         <p className="w-4/5 mx-auto mt-4">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
@@ -147,7 +205,7 @@ const Nav = () => {
     </>
     const singleDetailNav = <>
     <div className="lg:pb-2.5">{mainNav}</div>
-    <div className="text-center bg-[#9538E2] pb-52">
+    <div className="text-center bg-[#9538E2] pb-52 text-white">
       <div className="py-8">
         <h1 className="text-3xl font-bold">Product details</h1>
         <p className="w-4/5 mx-auto mt-4">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
@@ -156,7 +214,7 @@ const Nav = () => {
     </>
     const statsNav = <>
     <div className="lg:pb-2.5">{mainNav}</div>
-    <div className="text-center bg-[#9538E2] ">
+    <div className="text-center bg-[#9538E2] text-white">
       <div className="py-8">
         <h1 className="text-3xl font-bold">Statistics</h1>
         <p className="w-4/5 mx-auto mt-4">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
@@ -165,7 +223,7 @@ const Nav = () => {
     </>
       const pointNav = <>
       <div className="lg:pb-2.5">{mainNav}</div>
-      <div className="text-center bg-[#9538E2] ">
+      <div className="text-center bg-[#9538E2] text-white ">
         <div className="py-8">
           <h1 className="text-3xl font-bold">Point Shop</h1>
           <p className="w-4/5 mx-auto mt-4">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
