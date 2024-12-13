@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Gadget from "../Gadget/Gadget";
 import NoProduct from "../NoProduct/NoProduct";
-
+import { Helmet, HelmetProvider  } from "react-helmet-async";
 
 const Home = () => {
+
   const [gadgets, setGadgets] = useState([]);
 
   useEffect(() => {
@@ -26,8 +27,15 @@ const Home = () => {
       arrayNeed.push(gadget.category);
     }
   });
+  useEffect(() => {
+    document.title = "Gadget Heaven";
+  }, []);
   return (
-    <div className=" bg-gray-100 py-24">
+    <HelmetProvider>
+      <div className=" bg-gray-100 py-24">
+         <Helmet>
+        <title>Gadget Heaven</title>
+      </Helmet>
       <h1 className="text-center lg:text-4xl text-3xl font-bold mb-10 ">
         Explore Cutting-Edge Gadgets
       </h1>
@@ -85,6 +93,8 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </HelmetProvider>
+    
   );
 };
 

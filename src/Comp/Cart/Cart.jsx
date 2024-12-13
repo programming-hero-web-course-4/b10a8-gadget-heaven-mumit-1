@@ -19,6 +19,7 @@ const cart = ({cart}) => {
         category
       } = cart;
       const [cartlist,setCartList] = useContext(cartListNeed);
+     
       const handleCancel = () =>{
         setCartList(cartlist.filter(cart => cart.product_id !== product_id));
       }

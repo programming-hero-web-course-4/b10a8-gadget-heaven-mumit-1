@@ -7,21 +7,21 @@ const Footer = () => {
         </div>
       <footer className=" p-10">
         <div className=" footer max-w-screen-xl mx-auto justify-around">
-            <nav className="place-items-center">
+            <nav className="place-items-center w-full">
               <h6 className="font-bold text-lg">Services</h6>
               <a className="link link-hover">Product Support</a>
               <a className="link link-hover">Order Tracking</a>
               <a className="link link-hover">Shipping & Delivery</a>
               <a className="link link-hover">Returns</a>
             </nav>
-            <nav className="place-items-center">
+            <nav className="place-items-center w-full">
               <h6 className="font-bold text-lg">Company</h6>
               <a className="link link-hover">About us</a>
               <a className="link link-hover">Career</a>
               <a className="link link-hover">Contact</a>
             
             </nav>
-            <nav className="place-items-center">
+            <nav className="place-items-center w-full">
               <h6 className="font-bold text-lg">Legal</h6>
               <a className="link link-hover">Terms of Service</a>
               <a className="link link-hover">Privacy policy</a>

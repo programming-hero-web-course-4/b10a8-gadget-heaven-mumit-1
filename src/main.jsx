@@ -10,6 +10,7 @@ import Dashboard from "./Comp/Dashboard/Dashboard";
 import WishList from "./Comp/WishList.jsx/WishList";
 import CartParent from "./Comp/Cart/CartParent";
 import Stats from "./Comp/Stats/Stats";
+import Point from "./Comp/Point/Point";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         path: "/stats",
         element: <Stats></Stats>,
         loader: () => fetch("/Gadgets.json"),
+      },
+      {
+        path: "/point",
+        element: <Point></Point>,
       },
       {
         path: "/dashboard",

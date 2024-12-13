@@ -1,6 +1,7 @@
 import { IoCartOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { NavLink, useLocation ,Link } from "react-router-dom";
+import Point from './../Point/Point';
 
 const Nav = () => {
   const location = useLocation();
@@ -23,6 +24,11 @@ const Nav = () => {
         isActive ? "underline underline-offset-4  " : " "
       }`}>Dashboard</NavLink>
       </li>
+      <li>
+        <NavLink to="/point" className={({isActive})=>`btn hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-black ${
+        isActive ? "underline underline-offset-4  " : " "
+      }`}>Point</NavLink>
+      </li>
       </>
     const linkCopy =<>
         <li>
@@ -39,6 +45,11 @@ const Nav = () => {
         <NavLink to="/dashboard/cart" className={({isActive})=>` hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-black ${
         isActive ? "underline underline-offset-4  " : " "
       }`}>Dashboard</NavLink>
+      </li>
+      <li>
+        <NavLink to="/point" className={({isActive})=>` hover:bg-transparent hover:underline hover:underline-offset-4 bg-transparent border-0 text-black ${
+        isActive ? "underline underline-offset-4  " : " "
+      }`}>Point</NavLink>
       </li>
       </>
       
@@ -110,7 +121,7 @@ const Nav = () => {
          <div className="flex flex-col justify-center items-center gap-6 pt-12 lg:pb-72 md:pb-60 pb-36">
                 <h1 className="lg:text-5xl md:text-3xl text-4xl font-bold lg:w-10/12 w-11/12  text-center">Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
                 <p className="text-center lg:w-2/3 w-4/5">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
-                <button className="btn block rounded-full px-6">Shop Now</button>
+                <Link to="/dashboard/cart"> <button className="btn block rounded-full px-6">Shop Now</button></Link>
               </div>
           <div className="px-5  mx-auto absolute lg:top-[680px] md:top-[600px] top-[620px] inset-0 flex items-center justify-center">
               <div className="lg:w-[70%] md:w-[80%] mx-auto lg:h-[570px] bg-opacity-30 border-2 lg:p-6 p-3 rounded-3xl bg-white border-white ">
@@ -152,14 +163,22 @@ const Nav = () => {
             </div>
       </div>
     </>
-
+      const pointNav = <>
+      <div className="lg:pb-2.5">{mainNav}</div>
+      <div className="text-center bg-[#9538E2] ">
+        <div className="py-8">
+          <h1 className="text-3xl font-bold">Point Shop</h1>
+          <p className="w-4/5 mx-auto mt-4">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
+              </div>
+        </div>
+      </>
   return (
   <>
     { pathname === "/" && homeNav }
     { pathname.startsWith("/dashboard") && dashboardNav}
     { pathname.startsWith("/gadget") && singleDetailNav}
     { pathname.startsWith("/stats") && statsNav}
-
+    { pathname === "/point" && pointNav }
     </>
   );
 };

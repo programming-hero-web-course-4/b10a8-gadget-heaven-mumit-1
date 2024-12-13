@@ -1,18 +1,23 @@
 import { useContext, useState } from "react";
-import { cartListNeed } from "../Root/Root";
+import { cartListNeed, discountNeed, pointNeed } from "../Root/Root";
 import Cart from "../Cart/Cart";
 import { BsSortNumericDownAlt } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import Correct from "../../assets/icons8-correct-ezgif.com-loop-count.gif";
 import {  ToastContainer,toast } from 'react-toastify';
 const CartParent = () => {
+  const [discount,setDiscount] = useContext(discountNeed);
   const [cartlist, setcartList] = useContext(cartListNeed);
+  const [point,setPoint] = useContext(pointNeed);
   let sum = 0;
   for (const cart of cartlist) {
+    if(discount>0){
+      sum = (sum + cart.price) * (discount/100);
+    }
     sum += cart.price;
+    sum = parseInt(sum);
   }
-  
-  // const notify = () => toast("Wow so easy!")
+
  
     
   
@@ -20,6 +25,7 @@ const CartParent = () => {
     if(cartlist.length>0){
     const sortedCart = [...cartlist].sort((a, b) => b.price - a.price);
     setcartList(sortedCart);
+    
     }
     else{
       toast.error("No Gadget to sort by price.");
@@ -29,16 +35,19 @@ const CartParent = () => {
   const handlePurchase = () =>{
     if(cartlist.length>0){
       setModalTotal(sum);
+      setPoint(point + sum);
     document.getElementById("my_modal_5").showModal();
-    setcartList([])
+    setcartList([]);
+    setDiscount(0);
     }
     else{
       toast.error("No Gadget to purchase.");
     }
-   
+    
   }
   
   const navigate = useNavigate();
+ 
   return (
     <div className=" ">
      
@@ -47,7 +56,10 @@ const CartParent = () => {
           <div className="flex-1">
             <h1 className=" font-bold text-2xl ml-4 ">Cart</h1>
           </div>
-          <div className="font-bold text-lg lg:px-0 px-10">Total Cost: ${sum}</div>
+          <div className="font-bold text-lg lg:px-0 px-10">
+            {
+            discount>0 ? "With discount " : null
+            }Total Cost: ${sum}</div>
           <div className="pr-7 lg:pl-0 pl-4">
             <button
               onClick={() => handleSort()}

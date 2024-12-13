@@ -2,12 +2,17 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { Rating, Star } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { IoCartOutline } from "react-icons/io5";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Heart from "react-heart";
 import { cartListNeed, wishlistNeed } from "../Root/Root";
 import { ToastContainer, toast } from "react-toastify";
+import { Helmet , HelmetProvider  } from "react-helmet-async";
+
 // import Heart from "react-heart";
 const SingleDetail = () => {
+  useEffect(()=>{
+    document.title ="Gadget "
+  })
   const { product_id } = useParams();
   const data = useLoaderData();
 
@@ -45,8 +50,16 @@ const SingleDetail = () => {
       : newData.availability ?  toast.error("It is in the cart") :  toast.error("The Gadget is not availabale");
    ;
   };
+  useEffect(() => {
+    document.title = "Gadget";
+  }, []);
   return (
-    <div className="relative lg:py-56 md:py-72 py-[420px]  bg-base-200">
+    <HelmetProvider>
+      <div className="relative lg:py-56 md:py-72 py-[420px]  bg-base-200">
+         
+             <Helmet>
+        <title>Gadget </title>
+      </Helmet>
       <div className="hero pt-20 px-2 absolute lg:-top-[335px] md:-top-[325px] -top-[300px] min-h-screen">
         <div className="hero-content flex-col lg:flex-row gap-8 bg-white lg:p-8 md:p-6 rounded-2xl drop-shadow-xl">
           <div className="lg:w-96">
@@ -113,6 +126,8 @@ const SingleDetail = () => {
         </div>
       </div>
     </div>
+    </HelmetProvider>
+    
   );
 };
 
