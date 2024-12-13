@@ -11,11 +11,9 @@ const CartParent = () => {
   const [point,setPoint] = useContext(pointNeed);
   let sum = 0;
   for (const cart of cartlist) {
-    if(discount>0){
-      sum = (sum + cart.price) * (discount/100);
-    }
+   
     sum += cart.price;
-    sum = parseInt(sum);
+    
   }
 
  
@@ -34,16 +32,31 @@ const CartParent = () => {
   const [modalTotal,setModalTotal] = useState(0);
   const handlePurchase = () =>{
     if(cartlist.length>0){
-      setModalTotal(sum);
+      if(discount> 0){
+        const x = (sum-(sum*(discount/100)));
+        setModalTotal(parseInt(x));
+        
+      }
+      if(discount===0){
+        setModalTotal(sum);
+        
+      }
+        
+      
+      
       setPoint(point + sum);
     document.getElementById("my_modal_5").showModal();
     setcartList([]);
-    setDiscount(0);
+   
     }
     else{
       toast.error("No Gadget to purchase.");
     }
     
+  }
+  const handleCancel =()=>{
+    {navigate("/")};
+    setDiscount(0);
   }
   
   const navigate = useNavigate();
@@ -58,8 +71,8 @@ const CartParent = () => {
           </div>
           <div className="font-bold text-lg lg:px-0 px-10">
             {
-            discount>0 ? "With discount " : null
-            }Total Cost: ${sum}</div>
+            discount>0 ? "Before discount " : null
+            } Total Cost: ${sum}</div>
           <div className="pr-7 lg:pl-0 pl-4">
             <button
               onClick={() => handleSort()}
@@ -86,10 +99,12 @@ const CartParent = () => {
                       <div className="w-16 mx-auto py-5"><img className="w-full" src={Correct} alt="" /></div>
                       <h1 className="text-xl font-bold pb-5">Payment Successfully</h1>
                       <p>Thanks for purchasing</p>
-                      <p>Total: ${modalTotal}</p>
+                      <p>Total: ${modalTotal}{
+                        discount > 0 ? `   with ${discount}%` : null
+                        }</p>
                     </div>
                     
-                    <button onClick={()=>{navigate("/")}} className="btn w-full rounded-full font-bold">Close</button>
+                    <button onClick={()=>handleCancel()} className="btn w-full rounded-full font-bold">Close</button>
                 
               </div>
             </dialog>
