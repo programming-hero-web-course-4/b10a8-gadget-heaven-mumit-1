@@ -119,11 +119,11 @@ const Nav = () => {
       <div className="bg-[#9538E2] rounded-xl lg:mb-72 md:mb-64 mb-20">
          {mainNav}
          <div className="flex flex-col justify-center items-center gap-6 pt-12 lg:pb-72 md:pb-60 pb-36">
-                <h1 className="lg:text-5xl md:text-3xl text-4xl font-bold lg:w-10/12 w-11/12  text-center">Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
+                <h1 className="lg:text-6xl md:text-3xl text-4xl font-bold lg:w-10/12 w-11/12  text-center">Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
                 <p className="text-center lg:w-2/3 w-4/5">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
                 <Link to="/dashboard/cart"> <button className="btn block rounded-full px-6">Shop Now</button></Link>
               </div>
-          <div className="px-5  mx-auto absolute lg:top-[680px] md:top-[600px] top-[620px] inset-0 flex items-center justify-center">
+          <div className="px-5  mx-auto absolute lg:top-[700px] md:top-[600px] top-[620px] inset-0 flex items-center justify-center">
               <div className="lg:w-[70%] md:w-[80%] mx-auto lg:h-[570px] bg-opacity-30 border-2 lg:p-6 p-3 rounded-3xl bg-white border-white ">
                         <img className="w-full h-full rounded-2xl object-cover" src="https://img.freepik.com/free-photo/vr-glasses-gaming_23-2151138399.jpg" alt="" />
                   </div>

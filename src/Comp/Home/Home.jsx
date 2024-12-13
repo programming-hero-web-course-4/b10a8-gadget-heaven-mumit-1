@@ -36,7 +36,7 @@ const Home = () => {
          <Helmet>
         <title>Gadget Heaven</title>
       </Helmet>
-      <h1 className="text-center lg:text-4xl text-3xl font-bold mb-10 ">
+      <h1 className="text-center lg:text-4xl text-3xl font-bold mb-10 text-purple-700">
         Explore Cutting-Edge Gadgets
       </h1>
       <div className="lg:flex md:flex  gap-5 max-w-screen-xl mx-auto px-2">
