@@ -21,8 +21,6 @@ const Root = () => {
       <Nav></Nav>
 
       <wishlistNeed.Provider value={[wishList,setWishList]}>
-
-      
         <cartListNeed.Provider value={[cartlist,setcartList]}>
       <pointNeed.Provider value={[point,setPoint]}>
     <discountNeed.Provider value={[discount,setDiscount]}>
