@@ -11,8 +11,9 @@ const Error = () => {
                 <img className='w-20' src={Moon} alt="" />
                 </div>
                 <p>4</p>
+                
             </div>
-            <p className='text-center mt-2'>Page not found</p>
+            <p className='text-center mt-2'>Page not found!!</p>
             <Link to="/">
            <div className='flex items-center justify-center text-2xl mt-20'>
            <IoMdArrowBack className='mt-0.5 relative right-1.5'/>
